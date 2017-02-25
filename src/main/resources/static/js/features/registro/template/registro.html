@@ -1,0 +1,52 @@
+<section class="container" >
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3" id="registro">
+            <div class="col-md-4">
+                <label>Login: </label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" type="text" ng-model="vm.login.login">
+            </div>
+            <div class="col-md-4">
+                <label>Senha: </label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" type="text" ng-model="vm.login.senha">
+            </div>
+            <div class="col-md-4">
+                <label>Nome: </label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" type="text" ng-model="vm.usuario.nome">
+            </div>
+            <div class="col-md-4">
+                <label>CPF: </label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" type="text" ng-model="vm.usuario.cpf">
+            </div>
+            <div class="col-md-4">
+                <label>Endereço: </label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" type="text" ng-model="vm.usuario.endereco">
+            </div>
+            <div class="col-md-4">
+                <label>E-mail: </label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" type="text" ng-model="vm.usuario.email">
+            </div>
+            <div class="col-md-4">
+                <label>Data de nascimento:</label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" type="text" ng-model="vm.usuario.dataNascimento">
+            </div>
+            <div class="col-md-12" id="botoes">
+                <button class="btn btn-danger pull-right">Cancelar</button>
+                <button class="btn btn-primary pull-right" ng-click="vm.criarUsuario()">Registrar!</button>                
+            </div>
+        </div>
+    </div>
+</section>
