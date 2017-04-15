@@ -1,6 +1,7 @@
 package com.br.spring.caronaforall.entidades;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -38,12 +39,19 @@ public class Usuario implements Serializable {
     @Size(min = 1, max = 255)
     @Column(name = "senha")
     private String senha;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 255)
+    @Column(name = "email")
+    private String email;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "data_inclusao")
+    private Date dataInclusao;
     @OneToMany(mappedBy = "idUsuario")
     private List<Carro> carroList;
     @OneToMany(mappedBy = "idUsuario")
     private List<Motorista> motoristaList;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "usuario")
-    private InfoUsuario infoUsuario;
     @OneToMany(mappedBy = "idUsuario")
     private List<Passageiro> passageiroList;
 
@@ -84,6 +92,22 @@ public class Usuario implements Serializable {
         this.senha = senha;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Date getDataInclusao() {
+        return dataInclusao;
+    }
+
+    public void setDataInclusao(Date dataInclusao) {
+        this.dataInclusao = dataInclusao;
+    }
+
     @XmlTransient
     public List<Carro> getCarroList() {
         return carroList;
@@ -100,14 +124,6 @@ public class Usuario implements Serializable {
 
     public void setMotoristaList(List<Motorista> motoristaList) {
         this.motoristaList = motoristaList;
-    }
-
-    public InfoUsuario getInfoUsuario() {
-        return infoUsuario;
-    }
-
-    public void setInfoUsuario(InfoUsuario infoUsuario) {
-        this.infoUsuario = infoUsuario;
     }
 
     @XmlTransient
