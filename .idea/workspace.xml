@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f19642b9-b32e-4421-a7a0-9c908b3cc91d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/br/spring/caronaforall/entidades/InfoUsuario.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/br/spring/caronaforall/repositorios/InfoUsuarioDAO.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/br/spring/caronaforall/api/UsuarioApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/br/spring/caronaforall/api/UsuarioApi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/br/spring/caronaforall/entidades/Usuario.java" afterPath="$PROJECT_DIR$/src/main/java/com/br/spring/caronaforall/entidades/Usuario.java" />
-    </list>
+    <list default="true" id="f19642b9-b32e-4421-a7a0-9c908b3cc91d" name="Default" comment="" />
     <ignored path="CaronaForAll.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -828,12 +822,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1492277657828</updated>
-      <workItem from="1492277661356" duration="3196000" />
+      <workItem from="1492277661356" duration="3281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3196000" />
+    <option name="totallyTimeSpent" value="3281000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
