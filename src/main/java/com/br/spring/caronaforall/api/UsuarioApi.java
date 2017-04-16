@@ -45,8 +45,11 @@ public class UsuarioApi {
         return usuarioDao.save(usuario);
     }
 
+    @RequestMapping(method = RequestMethod.DELETE)
     public void deletarUsuario(@RequestBody Usuario u) {
-        usuarioDao.delete(u);
+        Usuario usuario = usuarioDao.findByLogin(u.getLogin());
+        usuarioDao.delete(usuario);
+
         System.out.println("Usuario: " + u.getLogin() + " deletado.");
     }
 
