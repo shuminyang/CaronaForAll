@@ -36,6 +36,11 @@ public class Usuario implements Serializable {
     private String login;
     @Basic(optional = false)
     @NotNull
+    @Size
+    @Column(name = "nome")
+    private String nome;
+    @Basic(optional = false)
+    @NotNull
     @Size(min = 1, max = 255)
     @Column(name = "senha")
     private String senha;
@@ -106,6 +111,14 @@ public class Usuario implements Serializable {
 
     public void setDataInclusao(Date dataInclusao) {
         this.dataInclusao = dataInclusao;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     @XmlTransient

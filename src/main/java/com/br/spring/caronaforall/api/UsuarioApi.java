@@ -37,10 +37,11 @@ public class UsuarioApi {
 
     @RequestMapping(method = RequestMethod.PUT)
     public Usuario alterarUsuario(@RequestBody Usuario u) {
-        Usuario usuario = usuarioDao.findByLogin(u.getLogin());
-        usuario.setEmail(u.getEmail());
-        usuario.setSenha(u.getSenha());
 
+        Usuario usuario = usuarioDao.findByLogin(u.getLogin());
+
+        usuario.setNome(u.getNome());
+        usuario.setEmail(u.getEmail());
         return usuarioDao.save(usuario);
     }
 
