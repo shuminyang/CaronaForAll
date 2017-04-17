@@ -1,6 +1,7 @@
 package com.br.spring.caronaforall.entidades;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,12 +31,20 @@ public class Carro implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 255)
-    @Column(name = "placa")
+    @Column(name = "placa", unique = true)
     private String placa;
     @Basic(optional = false)
     @NotNull
     @Column(name = "lugares")
     private int lugares;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "data_inclusao")
+    private Date dataInclusao;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "data_alteracao")
+    private Date dataAlteracao;
     @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
     @ManyToOne
     private Usuario idUsuario;
@@ -83,6 +92,22 @@ public class Carro implements Serializable {
 
     public void setIdUsuario(Usuario idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    public Date getDataInclusao() {
+        return dataInclusao;
+    }
+
+    public void setDataInclusao(Date dataInclusao) {
+        this.dataInclusao = dataInclusao;
+    }
+
+    public Date getDataAlteracao() {
+        return dataAlteracao;
+    }
+
+    public void setDataAlteracao(Date dataAlteracao) {
+        this.dataAlteracao = dataAlteracao;
     }
 
     @Override

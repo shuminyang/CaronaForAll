@@ -31,17 +31,20 @@ public class UsuarioApi {
         Calendar c = Calendar.getInstance();
         Date hoje = c.getTime();
         u.setDataInclusao(hoje);
+        u.setDataAlteracao(hoje);
 
         return usuarioDao.save(u);
     }
 
     @RequestMapping(method = RequestMethod.PUT)
     public Usuario alterarUsuario(@RequestBody Usuario u) {
-
+        Calendar c = Calendar.getInstance();
+        Date hoje = c.getTime();
         Usuario usuario = usuarioDao.findByLogin(u.getLogin());
 
         usuario.setNome(u.getNome());
         usuario.setEmail(u.getEmail());
+        usuario.setDataAlteracao(hoje);
         return usuarioDao.save(usuario);
     }
 

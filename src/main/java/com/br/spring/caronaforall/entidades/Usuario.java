@@ -1,5 +1,7 @@
 package com.br.spring.caronaforall.entidades;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -53,6 +55,10 @@ public class Usuario implements Serializable {
     @NotNull
     @Column(name = "data_inclusao")
     private Date dataInclusao;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "data_alteracao")
+    private Date dataAlteracao;
     @OneToMany(mappedBy = "idUsuario")
     private List<Carro> carroList;
     @OneToMany(mappedBy = "idUsuario")
@@ -121,7 +127,16 @@ public class Usuario implements Serializable {
         this.nome = nome;
     }
 
+    public Date getDataAlteracao() {
+        return dataAlteracao;
+    }
+
+    public void setDataAlteracao(Date dataAlteracao) {
+        this.dataAlteracao = dataAlteracao;
+    }
+
     @XmlTransient
+    @JsonIgnore
     public List<Carro> getCarroList() {
         return carroList;
     }
